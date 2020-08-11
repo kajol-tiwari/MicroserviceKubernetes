@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata: 
+    name: ingress-service 
+    annotations: 
+        # by this line we are telling the kuberntes that we are
+        # changing the default configuration of ingress nginx 
+        kubernetes.io/ingress.class: nginx 
+        # to make sure that we make use of the regular expressions
+        nginx.ingress.kubernetes.io/use-regex: 'true'
+spec: 
+    rules: 
+        # on what domain this will listen on 
+        - host: symtrain.dev
+          http: 
+            paths:
+                - path: /auth/?(.*) 
+                  backend: 
+                    serviceName: auth-srv 
+                    servicePort: 8080
+                - path: /storage/?(.*)
+                  backend: 
+                    serviceName: storage-srv
+                    servicePort: 8080
+                - path: /?(.*)
+                  backend: 
+                    serviceName: webapp-srv
+                    servicePort: 8080 
