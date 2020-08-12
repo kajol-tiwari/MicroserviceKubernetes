@@ -14,7 +14,7 @@ spec:
         spec: 
             containers: 
                 - name: backend 
-                  image: sushilrathore/symtrain-backend
+                  image: xyz/abc-backend
                   ports: 
                     - containerPort: 8080 
                 
