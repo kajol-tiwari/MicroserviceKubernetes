@@ -14,7 +14,7 @@ spec:
         spec: 
             containers: 
                 - name: auth 
-                  image: sushilrathore/symtrain-auth
+                  image: xyz/abc-auth
                   ports: 
                     - containerPort: 8080 
                 
