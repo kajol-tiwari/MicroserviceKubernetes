@@ -11,7 +11,7 @@ metadata:
 spec: 
     rules: 
         # on what domain this will listen on 
-        - host: symtrain.dev
+        - host: abc.dev
           http: 
             paths:
                 - path: /auth/?(.*) 
