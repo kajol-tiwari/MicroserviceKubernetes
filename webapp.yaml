@@ -14,7 +14,7 @@ spec:
         spec: 
             containers: 
                 - name: webapp 
-                  image: sushilrathore/symtrain-webapp
+                  image: xyz/abc-webapp
                   ports: 
                     - containerPort: 8080 
                 
